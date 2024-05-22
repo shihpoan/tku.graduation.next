@@ -3,8 +3,11 @@ import Image from "next/image.js";
 
 function BlessingBoard() {
   return (
-    <div className="flex flex-col w-[20%] h-full bg-sky-200 p-4 gap-4">
-      <div className="flex text-xl text-black font-semibold justify-start items-center">
+    <div
+      className="flex flex-col w-[20%] h-full rounded p-4 gap-4"
+      style={{ backdropFilter: "blur(15px)" }}
+    >
+      <div className="flex text-xl font-semibold justify-start items-center">
         <Image
           alt={"light"}
           width={100}
@@ -14,7 +17,7 @@ function BlessingBoard() {
         />
         <span>小花同學送來祝福</span>
       </div>
-      <div className="flex text-xl text-black font-semibold justify-start items-center">
+      <div className="flex text-xl font-semibold justify-start items-center">
         <Image
           alt={"heart"}
           width={100}
@@ -24,7 +27,7 @@ function BlessingBoard() {
         />
         <span>小名同學送來祝福</span>
       </div>
-      <div className="flex text-xl text-black font-semibold justify-start items-center">
+      <div className="flex text-xl font-semibold justify-start items-center">
         <Image
           alt={"boat"}
           width={100}
@@ -34,7 +37,7 @@ function BlessingBoard() {
         />
         <span>小武同學送來祝福</span>
       </div>
-      <div className="flex text-xl text-black font-semibold justify-start items-center">
+      <div className="flex text-xl font-semibold justify-start items-center">
         <Image
           alt={"light"}
           width={100}

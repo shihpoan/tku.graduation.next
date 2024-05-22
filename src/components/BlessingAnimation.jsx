@@ -16,39 +16,17 @@ const textArr = [
   "小酒同學祝：畢業是一個開始，願你的未來充滿無限可能！",
 ];
 
-function BlessingAnimation() {
+function BlessingAnimation({ text }) {
   const [isChangeBg, setIsChangeBg] = useState("bg-balloon-bg");
   const [isChangeText, setIsChangeText] = useState(
     "小安同學祝：在這個特別的日子，祝福你：前程萬里，一帆風順！"
   );
 
   return (
-    <div
-      className={`flex w-[80%] h-full text-white ${isChangeBg} bg-center bg-cover justify-center items-center`}
-    >
-      <div
-        onClick={() => {
-          // 生成 1 到 4 之間的隨機整數
-          const randomNumber = Math.floor(Math.random() * 4);
-          console.log("randomNumber", randomNumber);
-          setIsChangeBg(bgArr[randomNumber]);
-          setIsChangeText(textArr[randomNumber]);
-        }}
-      >
-        <Balloon text={isChangeText} />
+    <div className={`flex w-[80%] h-full justify-center items-center`}>
+      <div className="w-full h-max">
+        <Balloon text={text} />
       </div>
-      {/* <div onClick={() => setIsChangeBg("bg-spaceShip-bg text-white")}>
-        <Balloon url="/heart.png" animate="animate-zoom" />
-      </div>
-      <div onClick={() => setIsChangeBg("bg-soapBubbles-bg")}>
-        <Balloon url="/boat.png" animate="animate-rotate" />
-      </div>
-      <div onClick={() => setIsChangeBg("bg-sollar-bg  text-white")}>
-        <Balloon url="/heart.png" animate="animate-zoom" />
-      </div>
-      <div onClick={() => setIsChangeBg("bg-spaceShip-bg  text-white")}>
-        <Balloon url="/light.png" animate="animate-zoom" />
-      </div> */}
     </div>
   );
 }

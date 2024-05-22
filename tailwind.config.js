@@ -7,6 +7,14 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backdropBlur: {
+        xs: "2px",
+        sm: "4px",
+        md: "8px",
+        lg: "12px",
+        xl: "16px",
+        "2xl": "24px",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -37,7 +45,8 @@ module.exports = {
   variants: {
     extend: {
       animation: ["hover", "focus"],
+      backdropBlur: ["responsive"],
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-filters")],
 };

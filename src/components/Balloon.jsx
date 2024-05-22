@@ -17,23 +17,16 @@ function Balloon({ text }) {
     }, 3000);
   }, [randomRefresh, text]);
   return (
-    <div className="flex flex-col text-3xl font-bold justify-center items-center gap-2">
-      {/* <div className="flex w-[10rem] h-[10rem] justify-center items-center overflow-auto">
-        <Image
-          alt={"light"}
-          width={100}
-          height={100}
-          src={url}
-          className={`${animate}`}
-        />
-      </div> */}
-      <div
-        className="flex flex-col text-[80px] bg-black rounded gap-4 opacity-80 p-1"
-        style={{ wordWrap: "break-word", lineHeight: "2" }}
-      >
-        <div className="opacity-100">
-          <Typewriter text={text} repeatDelay={2000} />
-        </div>
+    <div
+      className="flex flex-col w-full h-[30rem] text-[80px] text-3xl font-bold rounded justify-center items-center gap-2"
+      style={{
+        wordWrap: "break-word",
+        lineHeight: "2",
+        backdropFilter: "blur(80px)",
+      }}
+    >
+      <div className="min-w-full px-4">
+        <Typewriter text={text} repeatDelay={2000} />
       </div>
     </div>
   );
