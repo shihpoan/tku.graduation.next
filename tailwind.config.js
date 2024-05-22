@@ -11,7 +11,10 @@ module.exports = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-        "tku-bg": "url('/bg.jpg')",
+        "balloon-bg": "url('/氣球背景.gif')",
+        "spaceShip-bg": "url('/spaceship.gif')",
+        "soapBubbles-bg": "url('/soapBubbles.gif')",
+        "sollar-bg": "url('/sollar.gif')",
       },
       animation: {
         zoom: "zoom 3s linear infinite",
@@ -19,14 +22,14 @@ module.exports = {
       },
       keyframes: {
         zoom: {
-          "0%": { transform: "scale(1)", filter: "brightness(100%)" },
-          "50%": { transform: "scale(2)", filter: "brightness(200%)" },
-          "100%": { transform: "scale(1)", filter: "brightness(100%)" },
+          "0%": { transform: "scale(0)", filter: "brightness(100%)" },
+          "50%": { transform: "scale(1.5)", filter: "brightness(200%)" },
+          "100%": { transform: "scale(0)", filter: "brightness(100%)" },
         },
         rotate: {
-          "0%": { transform: "rotate(0deg) scale(1)" },
-          "50%": { transform: "rotate(180deg) scale(2)" },
-          "100%": { transform: "rotate(360deg) scale(1)" },
+          "0%": { transform: "rotate(0deg) scale(0)" },
+          "50%": { transform: "rotate(180deg) scale(1.5)" },
+          "100%": { transform: "rotate(360deg) scale(0)" },
         },
       },
     },
