@@ -3,21 +3,20 @@ import { useEffect, useState, useRef } from "react";
 import BlessingBoard from "@/components/BlessingBoard.jsx";
 import BlessingAnimation from "@/components/BlessingAnimation.jsx";
 
-const bgArr = [
-  "bg-balloon-bg text-black",
-  "bg-spaceShip-bg text-white",
-  "bg-soapBubbles-bg text-white",
-  "bg-sollar-bg text-white",
-];
-
-const textArr = [
-  "小花同學祝：未來的路上，希望你繼續閃耀！",
-  "小名同學祝：畢業快樂！願你的人生如同一首美妙的樂章！",
-  "小武同學祝：願你勇敢地踏上新的征程，充滿信心地向前邁進！",
-  "小酒同學祝：畢業是一個開始，願你的未來充滿無限可能！",
-];
-
 export default function Home() {
+  const bgArr = [
+    "bg-balloon-bg text-black",
+    "bg-spaceShip-bg text-white",
+    "bg-soapBubbles-bg text-white",
+    "bg-sollar-bg text-white",
+  ];
+
+  const textArr = [
+    "小花同學祝：未來的路上，希望你繼續閃耀！",
+    "小名同學祝：畢業快樂！願你的人生如同一首美妙的樂章！",
+    "小武同學祝：願你勇敢地踏上新的征程，充滿信心地向前邁進！",
+    "小酒同學祝：畢業是一個開始，願你的未來充滿無限可能！",
+  ];
   const [isChangeBg, setIsChangeBg] = useState("bg-balloon-bg text-black");
   const [isChangeText, setIsChangeText] = useState(
     "小安同學祝：在這個特別的日子，祝福你：前程萬里！"
