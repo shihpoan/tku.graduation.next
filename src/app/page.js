@@ -37,21 +37,24 @@ export default function Home() {
     }, 3000);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [slideIndex]);
+
+  useEffect(() => {
+    console.log("slideIndex", slideIndex);
+  }, [slideIndex]);
   return (
     <div
       className={`flex w-full h-full ${isChangeBg} justify-end bg-center bg-cover`}
-      onClick={() => {
-        // 生成 1 到 4 之間的隨機整數
-        const randomNumber = Math.floor(Math.random() * 4);
-        console.log("randomNumber", randomNumber);
-        setIsChangeBg(bgArr[randomNumber]);
-        setIsChangeText(textArr[randomNumber]);
-      }}
+      // onClick={() => {
+      //   // 生成 1 到 4 之間的隨機整數
+      //   const randomNumber = Math.floor(Math.random() * 4);
+      //   console.log("randomNumber", randomNumber);
+      //   setIsChangeBg(bgArr[randomNumber]);
+      //   setIsChangeText(textArr[randomNumber]);
+      // }}
     >
       <BlessingBoard />
       <div className="flex w-full h-full p-1 justify-center">
         <BlessingAnimation text={isChangeText} />
-        {isChangeText}
       </div>
     </div>
   );
