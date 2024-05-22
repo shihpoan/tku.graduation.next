@@ -50,6 +50,7 @@ export default function Home() {
       <BlessingBoard />
       <div className="flex w-full h-full p-1 justify-center">
         <BlessingAnimation text={isChangeText} />
+        {isChangeText}
       </div>
     </div>
   );
