@@ -35,6 +35,7 @@ export default function Home() {
       _slideIndex += 1;
       setSlideIndex(_slideIndex);
     }, 3000);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [slideIndex]);
   return (
     <div
