@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import Typewriter from "@/components/Typewriter";
+import Typewriter from "@/components/TypeWriter";
 
 const animations = ["animate-zoom", "animate-rotate", ""]; // 可用的動畫列表
 
