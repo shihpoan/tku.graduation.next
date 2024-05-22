@@ -28,7 +28,7 @@ function Typewriter({ text, repeatDelay }) {
 
     // 清除定時器
     return () => clearInterval(intervalId);
-  }, [index]);
+  }, [index, text]);
 
   return <span className="text-center">{displayText}</span>;
 }
