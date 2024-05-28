@@ -19,7 +19,8 @@ export default function Home() {
   const [prevNonChangeText, setPrevNonChangeText] = useState([]);
   const [isNext, setIsNext] = useState(false);
   const [ws, setWs] = useState(null);
-  const socketUrl = "http://localhost:3001/water";
+  // const socketUrl = "http://localhost:3001/water";
+  const socketUrl = "https://tku.gu.zhshihpoan.com/water";
 
   useEffect(() => {
     console.log("prevChangeText", prevChangeText);
