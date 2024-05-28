@@ -5,6 +5,7 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation.js";
+import { Autocomplete, TextField, Button } from "@mui/material";
 import {
   useNodeGetApi,
   useNodePostApi,
@@ -93,7 +94,7 @@ const Blessings = ({ params }) => {
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label className="block text-gray-700 mb-2">祝福對象:</label>
-            <select
+            {/* <select
               className="border border-gray-300 rounded-md px-4 py-2 w-full focus:outline-none focus:border-blue-500 p-1"
               defaultValue=""
               onChange={(e) => setReceiver(e.target.value)}
@@ -107,8 +108,20 @@ const Blessings = ({ params }) => {
                     {user.studentId} - {user.name}
                   </option>
                 ))}
-              {/* 添加更多選項 */}
-            </select>
+            </select> */}
+            <Autocomplete
+              options={users}
+              getOptionLabel={(user) => `${user.studentId} - ${user.name}`}
+              renderInput={(params) => (
+                <TextField
+                  {...params}
+                  label="請選擇對象"
+                  variant="outlined"
+                  fullWidth
+                />
+              )}
+              onChange={(event, value) => setReceiver(value)}
+            />
           </div>
           <div className="flex w-full justify-end">
             <button
