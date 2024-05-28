@@ -42,7 +42,7 @@ function MyBlessingBoard({ lineId }) {
           }
         );
         const myDatas = dbDatas.data.data;
-        setMyBlessings([...myDatas]);
+        if (myDatas.length) setMyBlessings([...myDatas]);
         console.log("myDatas2", myDatas);
       } catch (err) {
         console.log("err", err);
@@ -55,22 +55,29 @@ function MyBlessingBoard({ lineId }) {
     <div className="flex flex-col w-full h-full bg-sky-200 p-4 gap-4">
       <div className="flex flex-col w-full h-[90%] max-h-[90%] overflow-auto">
         <div className="flex flex-col w-full h-max">
-          {myBlessings &&
+          {myBlessings ? (
             myBlessings.map((blessings, bIdx) => (
               <div
                 key={bIdx}
-                className="flex text-xl text-black font-semibold justify-start items-center"
+                className="flex text-xl text-black font-semibold justify-start items-center gap-2"
               >
                 <Image
                   alt={"light"}
                   width={100}
                   height={100}
                   src={blessings.category.imageUrl}
-                  className="w-[4rem] h-[4rem]"
+                  className="w-[3rem] h-[3rem]"
                 />
-                <span>{blessings.sender.name}同學，送來祝福</span>
+                <span>
+                  {blessings.sender.name}：{blessings.category.description}
+                </span>
               </div>
-            ))}
+            ))
+          ) : (
+            <div className="flex w-full text-3xl justify-center items-center">
+              尚無祝福資料
+            </div>
+          )}
           {/* <div className="w-full h-[100rem] bg-purple-200"></div> */}
         </div>
       </div>

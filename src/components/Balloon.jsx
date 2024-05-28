@@ -18,7 +18,7 @@ function Balloon({ text }) {
   }, [randomRefresh, text]);
   return (
     <div
-      className="flex flex-col w-full h-[30rem] text-[80px] text-3xl font-bold rounded justify-center items-center gap-2"
+      className="flex flex-col w-full h-[10%] lg:h-[30%] text-[40px] lg:text-[80px] font-bold rounded justify-center items-center gap-2"
       style={{
         wordWrap: "break-word",
         lineHeight: "2",
