@@ -35,6 +35,7 @@ const BindLineId = ({ params }) => {
       router.push("/bindSuccess");
     } catch (error) {
       console.log("發生錯誤:", error);
+      alert(`${error.message}`);
       // 在這裡添加錯誤處理邏輯，例如顯示錯誤消息給用戶或者進行其他操作
     }
   };
