@@ -15,6 +15,7 @@ export default function Home() {
 
   const [isChangeBg, setIsChangeBg] = useState("bg-balloon-bg text-black");
   const [isChangeText, setIsChangeText] = useState("");
+  const [isPrevChangeText, setIsPrevChangeText] = useState("");
   const [prevChangeText, setPrevChangeText] = useState([]);
   const [prevNonChangeText, setPrevNonChangeText] = useState([]);
   const [isNext, setIsNext] = useState(false);
@@ -23,12 +24,16 @@ export default function Home() {
   const socketUrl = "https://tku.gunode.zhshihpoan.com/water";
 
   useEffect(() => {
-    console.log("prevChangeText", prevChangeText);
+    // console.log("prevChangeText", prevChangeText);
 
     if (prevChangeText.length != 0) {
-      console.log("prevChangeTextprevChangeText", prevChangeText.length);
+      // console.log("prevChangeTextprevChangeText", prevChangeText.length);
 
       setIsChangeText(prevChangeText[0].text);
+      if (prevNonChangeText[1]) {
+        console.log("prevNonChangeText", prevNonChangeText);
+        setIsPrevChangeText(prevNonChangeText[1]);
+      }
       setIsChangeBg(bgArr[prevChangeText[0].imgIndex]);
 
       const timeoutId = setTimeout(() => {
@@ -38,7 +43,7 @@ export default function Home() {
 
       return () => clearTimeout(timeoutId);
     }
-  }, [prevChangeText, bgArr]);
+  }, [prevChangeText, prevNonChangeText, bgArr]);
 
   const connectWebSocket = useCallback(() => {
     if (!ws) {
@@ -80,7 +85,7 @@ export default function Home() {
       const boardBlessing = [`${senderName}`, `送來祝福！`];
 
       setPrevChangeText((prevText) => [...prevText, animationBlessingObj]);
-      setPrevNonChangeText((prevText) => [boardBlessing, ...prevText]);
+      setPrevNonChangeText((prevText) => [animationBlessingText, ...prevText]);
     });
 
     return () => {
@@ -92,8 +97,9 @@ export default function Home() {
     <div
       className={`flex w-full h-full max-h-full ${isChangeBg} justify-end bg-center bg-cover overflow-hidden`}
     >
-      <BlessingBoard blessings={[...prevNonChangeText]} />
-      <div className="flex w-full h-full p-1 justify-center">
+      {/* <BlessingBoard blessings={[...prevNonChangeText]} /> */}
+      <div className="flex flex-col w-full h-full p-1 justify-center items-center gap-2">
+        <BlessingAnimation text={isPrevChangeText ? isPrevChangeText : ""} />
         <BlessingAnimation text={isChangeText ? isChangeText : ""} />
       </div>
     </div>
