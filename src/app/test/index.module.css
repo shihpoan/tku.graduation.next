@@ -1,0 +1,10 @@
+/* pages/index.module.css */
+.container {
+  display: flex;
+  position: relative;
+  width: 100vw;
+  height: 100vh; /* 設置卡片高度加上一些餘量 */
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+}

@@ -20,11 +20,14 @@ export default function Home() {
   const [prevNonChangeText, setPrevNonChangeText] = useState([]);
   const [isNext, setIsNext] = useState(false);
   const [ws, setWs] = useState(null);
+  const socketUrl = process.env.NEXT_PUBLIC_SOCKET_URL;
   // const socketUrl = "http://localhost:3001/water";
-  const socketUrl = "https://tku.gunode.zhshihpoan.com/water";
+  // const socketUrl = "https://tku.gunode.zhshihpoan.com/water";
 
   useEffect(() => {
-    // console.log("prevChangeText", prevChangeText);
+    console.log("Docker!!!is!!!good!!!");
+    console.log("Docker!!!is!!!good!!!2!!!");
+    console.log("Docker!!!is!!!good!!!3!!!");
 
     if (prevChangeText.length != 0) {
       // console.log("prevChangeTextprevChangeText", prevChangeText.length);
